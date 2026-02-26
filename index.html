@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZDRAWKO_K | HELLSCAPE ARCHIVE</title>
+    <style>
+        :root { --red: #ff0000; --black: #050505; --gray: #1a1a1a; }
+        body { background: var(--black); color: var(--red); font-family: 'Courier New', monospace; margin: 0; overflow-x: hidden; line-height: 1.6; }
+        
+        /* CRT SCANLINES EFFECT */
+        body::before { content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03)); z-index: 100; background-size: 100% 3px, 3px 100%; pointer-events: none; opacity: 0.4; }
+
+        /* HERO SECTION */
+        .hero { position: relative; height: 70vh; display: flex; align-items: center; justify-content: center; border-bottom: 2px solid var(--red); background: #000; overflow: hidden; }
+        .hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; filter: grayscale(1) contrast(1.2); animation: glitch-img 3s infinite; }
+        .hero-title { position: absolute; font-size: clamp(3rem, 10vw, 7rem); font-weight: 900; text-shadow: 4px 4px 0px #440000; transform: skew(-5deg); pointer-events: none; }
+
+        /* NAVIGATION */
+        nav { background: var(--black); border-bottom: 1px solid var(--gray); padding: 15px; position: sticky; top: 0; z-index: 10; display: flex; justify-content: center; gap: 25px; }
+        nav a { color: var(--red); text-decoration: none; font-weight: bold; font-size: 0.9rem; letter-spacing: 2px; padding: 5px 10px; border: 1px solid transparent; }
+        nav a:hover { background: var(--red); color: #000; box-shadow: 0 0 15px var(--red); }
+
+        /* CONTENT */
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { border: 1px solid var(--gray); padding: 25px; background: #080808; position: relative; transition: 0.2s; cursor: crosshair; }
+        .card:hover { border-color: var(--red); background: #0c0000; }
+        .card h2 { margin-top: 0; font-size: 1.5rem; text-transform: uppercase; border-bottom: 1px solid var(--gray); padding-bottom: 10px; }
+
+        /* FOOTER & SOCIALS */
+        footer { border-top: 1px solid var(--gray); margin-top: 60px; padding: 40px; text-align: center; font-size: 0.7rem; letter-spacing: 1px; }
+        .socials { margin-bottom: 20px; }
+        .socials a { color: var(--red); text-decoration: none; border: 1px solid var(--red); padding: 8px 15px; margin: 0 5px; display: inline-block; font-size: 0.8rem; }
+        .socials a:hover { background: var(--red); color: #000; }
+
+        @keyframes glitch-img { 
+            0% { filter: grayscale(1); } 95% { filter: grayscale(1); transform: scale(1); } 
+            97% { filter: grayscale(0.5) sepia(1); transform: scale(1.02); } 100% { filter: grayscale(1); } 
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <img src="hero.png" onerror="this.src='https://via.placeholder.com/1920x1080/050505/ff0000?text=MISSING+HERO.PNG'" alt="ZDRAWKO_K">
+    <div class="hero-title">ZDRAWKO_K</div>
+</section>
+
+<nav>
+    <a href="#projects">PROJECTS</a>
+    <a href="#bazaar">BAZAAR</a>
+    <a href="#whispers">WHISPERS</a>
+    <a href="https://github.com/zdrawkok" target="_blank">[ESC]</a>
+</nav>
+
+<div class="container" id="projects">
+    <div class="grid">
+        <div class="card"><h2>METAL</h2><p>Limbic fragments, industrial rot, and distorted riffs from the pit.</p></div>
+        <div class="card"><h2>HIP-HOP</h2><p>8-bit concrete aesthetics. Lo-fi beats for low-life entities.</p></div>
+        <div class="card"><h2>REGGAE</h2><p>Dub rituals. Smoke signals sent from the charred remains of Babylon.</p></div>
+    </div>
+</div>
+
+<footer id="whispers">
+    <div class="socials">
+        <a href="#">INSTAGRAM</a>
+        <a href="#">BANDCAMP</a>
+        <a href="#">SPOTIFY</a>
+    </div>
+    <p>ZDRAWKO_K // HELLSCAPE ARCHIVE // INITIALIZED 2026</p>
+    <p style="opacity: 0.3;">CONNECTING TO SERVER... OK</p>
+</footer>
+
+</body>
+</html>
 
